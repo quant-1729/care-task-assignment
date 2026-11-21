@@ -1,0 +1,346 @@
+{
+ "serverNow": 0,
+ "config": {
+  "workloadLimit": 12,
+  "warnAfterMs": {
+   "urgent": 25000,
+   "routine": 30000
+  },
+  "offerTimeoutMs": 60000
+ },
+ "demo": {
+  "nextMode": "never"
+ },
+ "specialties": [
+  {
+   "key": "icu",
+   "label": "Critical care (ICU)"
+  },
+  {
+   "key": "cardiac",
+   "label": "Cardiac"
+  },
+  {
+   "key": "paediatrics",
+   "label": "Paediatrics"
+  },
+  {
+   "key": "wound_care",
+   "label": "Wound care"
+  },
+  {
+   "key": "iv_medication",
+   "label": "IV and medication"
+  }
+ ],
+ "patients": [
+  {
+   "id": 1,
+   "name": "Mara Quill",
+   "bed": "4"
+  },
+  {
+   "id": 2,
+   "name": "Tobias Reed",
+   "bed": "1"
+  },
+  {
+   "id": 3,
+   "name": "Lena Ortiz",
+   "bed": "7"
+  }
+ ],
+ "nurses": [
+  {
+   "id": 1,
+   "name": "Asha Menon",
+   "specialties": [
+    "icu",
+    "cardiac"
+   ],
+   "onShift": true,
+   "workload": 6,
+   "activeTaskCount": 2
+  },
+  {
+   "id": 2,
+   "name": "Ben Carter",
+   "specialties": [
+    "wound_care",
+    "iv_medication"
+   ],
+   "onShift": true,
+   "workload": 11,
+   "activeTaskCount": 4
+  },
+  {
+   "id": 3,
+   "name": "Chloe Wright",
+   "specialties": [
+    "wound_care",
+    "paediatrics"
+   ],
+   "onShift": true,
+   "workload": 2,
+   "activeTaskCount": 1
+  },
+  {
+   "id": 4,
+   "name": "Dev Nair",
+   "specialties": [
+    "icu"
+   ],
+   "onShift": false,
+   "workload": 0,
+   "activeTaskCount": 0
+  }
+ ],
+ "tasks": [
+  {
+   "id": 7,
+   "patient": {
+    "id": 1,
+    "name": "Mara Quill",
+    "bed": "4"
+   },
+   "careNeeded": "Post-surgery wound dressing",
+   "specialty": "wound_care",
+   "acuity": 2,
+   "priority": "urgent",
+   "status": "needs_attention",
+   "attentionReason": "taking_too_long",
+   "nurse": null,
+   "requestId": "3f2a9c1e",
+   "requestStartedAt": -40000,
+   "offeredAt": null,
+   "createdAt": -240000,
+   "updatedAt": -1000,
+   "excludedNurseIds": [
+    3
+   ]
+  },
+  {
+   "id": 8,
+   "patient": {
+    "id": 3,
+    "name": "Lena Ortiz",
+    "bed": "7"
+   },
+   "careNeeded": "IV antibiotics round",
+   "specialty": "iv_medication",
+   "acuity": 2,
+   "priority": "routine",
+   "status": "needs_attention",
+   "attentionReason": "declined",
+   "nurse": null,
+   "requestId": null,
+   "requestStartedAt": null,
+   "offeredAt": null,
+   "createdAt": -240000,
+   "updatedAt": -1000,
+   "excludedNurseIds": [
+    2
+   ]
+  },
+  {
+   "id": 9,
+   "patient": {
+    "id": 2,
+    "name": "Tobias Reed",
+    "bed": "1"
+   },
+   "careNeeded": "Ventilated patient, hourly checks",
+   "specialty": "icu",
+   "acuity": 4,
+   "priority": "urgent",
+   "status": "finding",
+   "attentionReason": null,
+   "nurse": null,
+   "requestId": "aa11",
+   "requestStartedAt": -12000,
+   "offeredAt": null,
+   "createdAt": -240000,
+   "updatedAt": -1000,
+   "excludedNurseIds": []
+  },
+  {
+   "id": 10,
+   "patient": {
+    "id": 3,
+    "name": "Lena Ortiz",
+    "bed": "7"
+   },
+   "careNeeded": "Cardiac monitoring review",
+   "specialty": "cardiac",
+   "acuity": 3,
+   "priority": "routine",
+   "status": "offered",
+   "attentionReason": null,
+   "nurse": {
+    "id": 1,
+    "name": "Asha Menon"
+   },
+   "requestId": null,
+   "requestStartedAt": null,
+   "offeredAt": -15000,
+   "createdAt": -240000,
+   "updatedAt": -1000,
+   "excludedNurseIds": []
+  },
+  {
+   "id": 11,
+   "patient": {
+    "id": 1,
+    "name": "Mara Quill",
+    "bed": "4"
+   },
+   "careNeeded": "Dressing change",
+   "specialty": "wound_care",
+   "acuity": 1,
+   "priority": "routine",
+   "status": "new",
+   "attentionReason": null,
+   "nurse": null,
+   "requestId": null,
+   "requestStartedAt": null,
+   "offeredAt": null,
+   "createdAt": -240000,
+   "updatedAt": -1000,
+   "excludedNurseIds": []
+  },
+  {
+   "id": 12,
+   "patient": {
+    "id": 2,
+    "name": "Tobias Reed",
+    "bed": "1"
+   },
+   "careNeeded": "Blood pressure rounds",
+   "specialty": "cardiac",
+   "acuity": 2,
+   "priority": "routine",
+   "status": "accepted",
+   "attentionReason": null,
+   "nurse": {
+    "id": 1,
+    "name": "Asha Menon"
+   },
+   "requestId": null,
+   "requestStartedAt": null,
+   "offeredAt": null,
+   "createdAt": -240000,
+   "updatedAt": -1000,
+   "excludedNurseIds": []
+  },
+  {
+   "id": 13,
+   "patient": {
+    "id": 3,
+    "name": "Lena Ortiz",
+    "bed": "7"
+   },
+   "careNeeded": "Paediatric fever check",
+   "specialty": "paediatrics",
+   "acuity": 1,
+   "priority": "routine",
+   "status": "done",
+   "attentionReason": null,
+   "nurse": {
+    "id": 3,
+    "name": "Chloe Wright"
+   },
+   "requestId": null,
+   "requestStartedAt": null,
+   "offeredAt": null,
+   "createdAt": -240000,
+   "updatedAt": -1000,
+   "excludedNurseIds": []
+  },
+  {
+   "id": 14,
+   "patient": {
+    "id": 1,
+    "name": "Mara Quill",
+    "bed": "4"
+   },
+   "careNeeded": "Pressure sore care",
+   "specialty": "wound_care",
+   "acuity": 2,
+   "priority": "routine",
+   "status": "cancelled",
+   "attentionReason": null,
+   "nurse": null,
+   "requestId": null,
+   "requestStartedAt": null,
+   "offeredAt": null,
+   "createdAt": -240000,
+   "updatedAt": -1000,
+   "excludedNurseIds": []
+  }
+ ],
+ "events": [
+  {
+   "id": 1,
+   "at": -240000,
+   "actor": "head_nurse",
+   "kind": "created",
+   "message": "Task created by head nurse.",
+   "requestId": null,
+   "nurseId": null
+  },
+  {
+   "id": 2,
+   "at": -239000,
+   "actor": "system",
+   "kind": "request_sent",
+   "message": "Sent to auto-assign (request 3f2a9c).",
+   "requestId": "3f2a9c1e",
+   "nurseId": null
+  },
+  {
+   "id": 3,
+   "at": -210000,
+   "actor": "system",
+   "kind": "taking_too_long",
+   "message": "No answer after 25 s. Flagged as taking too long.",
+   "requestId": "3f2a9c1e",
+   "nurseId": null
+  },
+  {
+   "id": 4,
+   "at": -120000,
+   "actor": "head_nurse",
+   "kind": "assigned_by_hand",
+   "message": "Assigned by hand to Ben Carter.",
+   "requestId": null,
+   "nurseId": 2
+  },
+  {
+   "id": 5,
+   "at": -100000,
+   "actor": "system",
+   "kind": "late_answer_ignored",
+   "message": "Late answer ignored (request 3f2a9c): already assigned by head nurse to Ben Carter.",
+   "requestId": "3f2a9c1e",
+   "nurseId": 2
+  },
+  {
+   "id": 6,
+   "at": -90000,
+   "actor": "head_nurse",
+   "kind": "action_rejected",
+   "message": "Could not assign Chloe Wright: she would go over her workload limit.",
+   "requestId": null,
+   "nurseId": 3
+  },
+  {
+   "id": 7,
+   "at": -60000,
+   "actor": "server",
+   "kind": "restart_interrupted",
+   "message": "The server restarted while this request was in flight.",
+   "requestId": null,
+   "nurseId": null
+  }
+ ]
+}
